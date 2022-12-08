@@ -15,7 +15,7 @@ public class DogDB {
     public static String DB_PASS = "";
 
     public DogDB() throws SQLException {
-        String url = String.format("jdbc:%s//%s:%s/%s", DB_DRIVER, DB_HOST, DB_PORT, DB_DBNAME);
+        String url = String.format("jdbc:%s://%s:%s/%s", DB_DRIVER, DB_HOST, DB_PORT, DB_DBNAME);
         conn = DriverManager.getConnection(url, DB_USER, DB_PASS);
     }
 
