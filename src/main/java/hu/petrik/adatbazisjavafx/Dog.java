@@ -50,4 +50,14 @@ public class Dog {
     public void setBreed(String breed) {
         this.breed = breed;
     }
+
+    @Override
+    public String toString() {
+        return "Dog {" +
+                "id= " + id +
+                ", name= '" + name + '\'' +
+                ", age= " + age +
+                ", breed= '" + breed + '\'' +
+                " }";
+    }
 }
