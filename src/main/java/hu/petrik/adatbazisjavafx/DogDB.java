@@ -22,9 +22,9 @@ public class DogDB {
     public boolean createDog(Dog dog) throws SQLException {
         String sql = "INSERT INTO dogs(name, age, breed) VALUES (?,?,?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1,dog.getName());
-        stmt.setInt(2,dog.getAge());
-        stmt.setString(3,dog.getBreed());
+        stmt.setString(1, dog.getName());
+        stmt.setInt(2, dog.getAge());
+        stmt.setString(3, dog.getBreed());
         return stmt.executeUpdate() > 0;
     }
 
@@ -48,8 +48,11 @@ public class DogDB {
 
     }
 
-    public void deleteDog() {
-
+    public boolean deleteDog(int id) throws SQLException {
+        String sql = "DELETE FROM dogs WHERE id = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, id);
+        return stmt.executeUpdate() > 0;
     }
 
 }
